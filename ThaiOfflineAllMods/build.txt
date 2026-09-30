@@ -1,0 +1,8 @@
+displayName = ภาษาไทย [Calamity]
+author = ThaiOfflineAllMods Contributors
+version = 1.4.1
+side = Client
+weakReferences = NoxusBoss, TerrariaAmbience
+sortAfter = ThaiLanguageLibrary, MoreLocales
+includeSource = true
+buildIgnore = bin/*, obj/*, README.md, icon_workshop.png

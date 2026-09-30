@@ -1,0 +1,16 @@
+Mods: {
+	ThaiOfflineAllMods: {
+		Runtime.Ready: Thai translation ready
+
+		Configs: {
+			ThaiConfig: {
+				DisplayName: Thai language
+
+				UseThai: {
+					Label: Enable Thai
+					Tooltip: Enable Thai text and fonts. Turn off to return to the previous language. Changes apply immediately; no mod reload is required.
+				}
+			}
+		}
+	}
+}

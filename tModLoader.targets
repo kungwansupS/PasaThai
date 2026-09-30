@@ -1,0 +1,8 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(TMLInstallPath)/tMLMod.targets"
+          Condition="'$(TMLInstallPath)' != '' and Exists('$(TMLInstallPath)/tMLMod.targets')" />
+  <Target Name="MissingTModLoaderTargets" BeforeTargets="PrepareForBuild"
+          Condition="'$(TMLInstallPath)' == '' or !Exists('$(TMLInstallPath)/tMLMod.targets')">
+    <Error Text="Pass -p:TMLInstallPath=&quot;path/to/tModLoader&quot; with an installation containing tMLMod.targets." />
+  </Target>
+</Project>

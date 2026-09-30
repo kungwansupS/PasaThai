@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <BuildMod>false</BuildMod>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>12.0</LangVersion>
+  </PropertyGroup>
+  <Import Project="../tModLoader.targets" />
+  <ItemGroup>
+    <Compile Remove="NativeQa/**" />
+    <Compile Include="../ThaiOfflineAllMods/*.cs" Link="Production/%(Filename)%(Extension)" />
+  </ItemGroup>
+</Project>
