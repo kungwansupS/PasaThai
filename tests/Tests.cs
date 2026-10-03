@@ -211,8 +211,12 @@ internal static class Tests
             string[] patterns = [@"\{[^{}]+\}", @"<[^>]+>", @"\[c/[^:\]]+:", @"\[(?:i(?:/s[\d.]+)?|rg(?:/s[\d.]+)?|cbuff|cbuffplr|centeritem):[^\]]+\]"];
             Equal(patterns.Length, expected.Length, key);
             for (int i = 0; i < patterns.Length; i++)
-                Equal(string.Join('|', expected[i].Order()),
-                    string.Join('|', Regex.Matches(thai, patterns[i]).Select(m => m.Value).Order()), key);
+            {
+                var thaiTokens = Regex.Matches(thai, patterns[i]).Select(m => m.Value).ToList();
+                // Thai has no grammatical plural, so a plural selector like {^0:day;days} may be dropped; any kept must match.
+                Equal(string.Join('|', expected[i].Where(t => !t.StartsWith("{^") || thaiTokens.Contains(t)).Order()),
+                    string.Join('|', thaiTokens.Order()), key);
+            }
         }
         Equal("?", pack.Entries["Mods.BetterGuide.Classes.UnrankedBadge"]);
         True(pack.Entries["ItemTooltip.EncumberingStone"].Contains("<right>"));

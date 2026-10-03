@@ -1,6 +1,6 @@
 displayName = ภาษาไทย [Calamity]
 author = ThaiOfflineAllMods Contributors
-version = 1.4.1
+version = 1.4.2
 side = Client
 weakReferences = NoxusBoss, TerrariaAmbience
 sortAfter = ThaiLanguageLibrary, MoreLocales

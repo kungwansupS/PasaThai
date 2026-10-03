@@ -11,5 +11,7 @@ python tools/make_token_baseline.py <path-to-audited-source-en.json>
 
 ไฟล์ต้นฉบับต้องเป็น JSON แบบ `{"Localization.Key": "English text"}`
 การผ่าน test หมายถึงรูปแบบข้อความยังตรงกับ baseline นี้ ไม่ได้ตรวจความหมายของคำแปล
+โทเคนเลือกรูปพหูพจน์ เช่น `{^0:day;days}` ตัดออกจากคำแปลได้ เพราะภาษาไทยไม่มีรูปพหูพจน์
+แต่ถ้าคงไว้ ต้องเขียนให้ตรงกับต้นฉบับ
 
 ไฟล์ `.tmod` ที่ test ใช้ให้สร้างด้วย `tools/Package.ps1` จะอยู่ใน `.qa` และไม่เข้า Git
